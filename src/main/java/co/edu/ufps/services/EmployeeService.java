@@ -26,5 +26,13 @@ public class EmployeeService {
 		return employeeRepository.save(p);
 	}
 	
-	
+	public Employee getListar1(Integer id) {
+		Optional<Employee> employeeOpt =  employeeRepository.findById(id);
+		
+		if (employeeOpt.isPresent()) {
+			return employeeOpt.get();
+		}
+		
+		return null;
+	}
 }

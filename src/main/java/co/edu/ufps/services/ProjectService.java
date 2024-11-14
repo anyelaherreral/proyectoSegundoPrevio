@@ -38,4 +38,12 @@ public class ProjectService {
 
 		return projectRepository.save(project);
 	}
+	
+	public Project getProject(Integer id) {
+		Optional<Project> projectOpt =  projectRepository.findById(id);
+		if (projectOpt.isPresent()) {
+			return projectOpt.get();
+		}
+		return null;
+	}
 }

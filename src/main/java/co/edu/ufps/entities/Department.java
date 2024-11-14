@@ -31,7 +31,7 @@ public class Department {
 	
 	@ManyToOne
 	@JoinColumn(name="chief_id")
-	private Employee employee;
+	private Employee jefe;
 	
 	
 	@ManyToMany(mappedBy = "departments")
@@ -40,7 +40,15 @@ public class Department {
 	
 	@OneToMany(mappedBy="departmentss",cascade= CascadeType.ALL)
 	@JsonIgnore
-	private List<Employee> employeesE;
+	private List<Employee> Employee;
+	
+	public void addEmployee(Employee e) {
+		this.Employee.add(e);
+	}
+	
+	public void removeEmployee(Employee e) {
+		this.Employee.remove(e);
+	}
 	
 	
 }

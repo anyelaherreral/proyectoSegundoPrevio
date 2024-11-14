@@ -49,7 +49,7 @@ public class Employee {
 	@JsonIgnore
 	private List<ProjectAssignment> projectsA;
 	
-	@OneToMany(mappedBy="employee",cascade= CascadeType.ALL)
+	@OneToMany(mappedBy="jefe",cascade= CascadeType.ALL)
 	@JsonIgnore
 	private List<Department> department;
 	
